@@ -1,0 +1,51 @@
+# P203 11.2.1 顺序表查找数据
+#例11.3
+def search_(alist,item):
+	pos=0
+	found=False
+	while (pos<len(alist) and not found):
+		if(alist[pos]==item):
+			found=True
+		else:
+			pos=pos+1
+	return found
+
+def main():
+	test_list=[1,324,5642,45,3,7,14]
+	print(search_(test_list,324))
+	print(search_(test_list,8))
+
+if __name__ == '__main__':
+	main()
+  
+
+
+
+#在列表中顺序查找最大最小值
+#例11.4
+def max_1(alist):
+	pos=0
+	iMax=alist[0]
+	while(pos<len(alist)):
+		if alist[pos]>iMax:
+			iMax=alist[pos]
+		else:
+			pos=pos+1
+	return iMax
+
+def min_1(alist):
+	iMin=alist[0]
+	for item in alist:
+		if item<iMin:
+			iMin=item
+		return iMin
+
+def main():
+	test_list=[213,2145,5654231,3123,12324,321]
+	print("Max:",max_1(test_list))
+	print("Min:",min_1(test_list))
+
+if __name__ == '__main__':
+	main()
+  
+  
