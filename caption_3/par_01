@@ -1,0 +1,87 @@
+#P38 海伦公式计算三角形面积
+import math
+a=float(input("Please input a:"))
+b=float(input("Please input b:"))
+c=float(input("Please input c:"))
+h=(a+b+c)/2
+area=math.sqrt(h*(h-a)*(h-b)*(h-c))
+print(str.format("三角形三边分别为:a={0},b={1},c={2}",a,b,c))
+print(str.format("三角形的面积为:{0}",area))
+
+
+# P39 输入两个数，比较两个数的大小
+a=int(input("Pliease input the first integer:"))
+b=int(input("Pliease input the second integer:"))
+print(str.format("输入值为:{0},{1}",a,b))
+if(a<b):
+	t=a
+	a=b
+	b=t
+print(str.format("降序值为:{0},{1}",a,b))
+
+
+#P41 输入百分制分数，转换为五级制
+mark=int(input("Please input an integer:"))
+if(mark>=90):grade="优"
+elif(mark>=80):grade="良"
+elif(mark>=70):grade="中"
+elif(mark>=60):grade="及格"
+else:grade="不及格"
+print("等级为:",grade)
+
+
+#P41 输入点的坐标，判断其所在的象限
+x=int(input("Please input x:"))
+y=int(input("Please input y:"))
+if(x==0 and y==0):print("位于原点")
+elif(x==0):print("位于x轴")
+elif(y==0):print("位于y轴")
+elif(x>0 and y>0):print("位于第一象限")
+elif(x<0 and y>0):print("位于第二象限")
+elif(x<0 and y<0):print("位于第三象限")
+else:print("位于第四象限")
+
+
+#P43 输入三个数，按从大到小的顺序排序
+a=int(input("Please input a:"))
+b=int(input("Please input b:"))
+c=int(input("Please input c:"))
+if(a<b):t=a;a=b;b=t
+if(a<c):t=a;a=c;c=t
+if(b<c):t=b;b=c;c=t
+print("降序结果为:",a,b,c)
+
+
+#P43 判断某年是否为闰年
+year=int(input("Please input year:"))
+if((year%4==0 and year%100!=0)or(year%400==0)):
+	print(str.format("{0}年是闰年",year))
+else:
+	print(str.format("{0}年不是闰年",year))
+
+#if(calendar.isleap(year)):print("是闰年")
+#else:print("不是闰年")
+
+
+#P45 计算1-100所有的奇数和，偶数和
+sum_odd=0;sum_even=0
+for i in range(1,101):
+	if i%2!=0:
+		sum_odd+=i
+	else:
+		sum_even+=i
+
+print("1-100中所有奇数和为:",sum_odd)
+print("1-100中所有偶数和为:",sum_even)
+
+
+#P46 利用while循环计算1-100之间所有的奇数和，偶数和，总和
+i=1;sum_all=0;sum_odd=0;sum_even=0
+while(i<=100):
+	sum_all+=i
+	if i%2!=0:
+		sum_even+=i
+	else:
+		sum_odd+=i
+	i+=1
+print("和=%d,奇数和=%d,偶数和=%d"%(sum_all,sum_odd,sum_even))
